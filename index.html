@@ -29,7 +29,68 @@
     
     <title>TaskY</title>
   </head>
-  <body>
+  <body onload="loadInitialCardData()">
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Add New Task</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div class="mb-3">
+              <label for="imageurl" class="form-label">Image Url</label>
+              <input
+                type="url"
+                class="form-control"
+                id="imageurl"
+                aria-describedby="Image url"
+                placeholder="https://example.com/hello.jpg"
+              />
+            </div>
+            <div class="mb-3">
+              <label for="tasktitle" class="form-label">Task Title</label>
+              <input
+                type="text"
+                class="form-control"
+                id="tasktitle"
+                aria-describedby="Task title"
+                placeholder="eg: API Integration"
+              />
+            </div>
+            <div class="mb-3">
+              <label for="tasktype" class="form-label">Task Type</label>
+              <input
+                type="text"
+                class="form-control"
+                id="tasktype"
+                aria-describedby="Task type"
+                placeholder="eg: work"
+              />
+            </div>
+            <div class="mb-3">
+              <label for="taskdescription" class="form-label"
+                >Task Description</label
+              >
+              <textarea
+                rows="6"
+                class="form-control"
+                id="taskdescription"
+                aria-describedby="Task type"
+                placeholder="Describe your task in detail"
+              ></textarea>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary" data-bs-dismiss="modal" onclick="saveChanges()">Save Changes</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- navbar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <div class="container-fluid">
         <a class="navbar-brand fw-bold text-primary" href="#">TaskY</a>
@@ -43,7 +104,7 @@
             </li>
             
           </ul>
-          <button type="button" class="btn btn-primary">
+          <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
             <i class="fas fa-plus"></i>  Add New
           </button>
           
@@ -74,31 +135,8 @@
 
       <!-- cards -->
       <section class="mt-5">
-        <div class="row">
-          <div class="col-md-6 col-lg-4">
-            <div class="card ">
-              <div class="card-header d-flex justify-content-end gap-1">
-                <button type="button" class="btn btn-outline-success">
-                  <i class="fas fa-pencil-alt"></i>
-                </button>
-                <button type="button" class="btn btn-outline-danger">
-                  <i class="fas fa-trash-alt"></i>
-                </button>
-              </div>
-              <img src="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg" class="card-img-top" alt="...">
-              <div class="card-body">
-                <h5 class="card-title">Special title treatment</h5>
-                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
-              </div>
-              <div class="card-footer">
-                <button type="button" class="btn btn-outline-primary float-end">
-                  Open Task
-                </button>
-              </div>
-            </div>
-    
-          </div>
+        <div class="row " id="task_container">
+           
         </div>
       </section>
 
@@ -113,5 +151,8 @@
       integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
       crossorigin="anonymous"
     ></script>
+    <!-- our js file-->
+    <script src="index.js">
+    </script>
   </body>
 </html>
