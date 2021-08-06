@@ -3,6 +3,8 @@ const taskContainer = document.querySelector("#task_container");
 
 var globalStore = []; //changed to var for delete
 
+const defaultImageUrl = "https://pmtips.net/Portals/0/EasyDNNNews/2137/700600p546EDNmainimg-3-types-of-tools-for-project-task-management1.jpg"
+
 const createNewcard = (taskData) => 
     `<div class="col-md-6 col-lg-4 mb-5" >
         <div class="card  shadow">
@@ -50,7 +52,7 @@ const loadInitialCardData = () =>{
 const saveChanges = () => {
     const taskData = {
         id: `${Date.now()}`,
-        imageUrl: document.getElementById("imageurl").value,
+        imageUrl: document.getElementById("imageurl").value? document.getElementById("imageurl").value : defaultImageUrl ,
         taskTitle: document.getElementById("tasktitle").value,
         taskType: document.getElementById("tasktype").value,
         taskDescription: document.getElementById("taskdescription").value,
