@@ -137,6 +137,31 @@
       <section class="mt-5">
         <div class="row " id="task_container">
            
+          <div class="col-md-6 col-lg-4 mt- 5 mb-5" >
+              <div class="card shadow">
+                  <div class="card-header d-flex justify-content-end gap-1">
+                      <button type="button" class="btn btn-outline-success   ">
+                          <i class="fas fa-pencil-alt   "></i>
+                      </button>
+                      <button type="button" class="btn btn-outline-danger" id="${taskData.id}" onclick="deleteCard.apply(this, arguments)">
+                          <i class="fas fa-trash-alt" id="${taskData.id}" onclick="deleteCard.apply(this, arguments)"></i>
+                      </button>
+                  </div>
+                  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR9rPTHZR-Z79Cx2lK4isBzBCU_s-Apqysa4w&usqp=CAU" alt="image url" style="height: 12rem; object-fit: cover;">
+                  <div class="card-body">
+                      <h4 class="card-title">WELCOME</h4>
+                      <p class="card-text">This is a demo card</p>
+                      <a href="#" class="btn btn-primary">Tasky</a>
+                  </div>
+                  <div class="card-footer">
+                      <button type="button" id="${taskData.id}" class="btn btn-outline-primary float-end">
+                      Open Task
+                      </button>
+                  </div>
+              </div>
+
+          </div>
+
         </div>
       </section>
 

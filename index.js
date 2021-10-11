@@ -16,7 +16,7 @@ const createNewcard = (taskData) =>
                     <i class="fas fa-trash-alt" id="${taskData.id}" onclick="deleteCard.apply(this, arguments)"></i>
                 </button>
             </div>
-            <img src="${taskData.imageUrl}" alt="image url" style="height: 14rem">
+            <img src="${taskData.imageUrl}" alt="image url" style="height: 12rem; object-fit: cover;">
             <div class="card-body">
                 <h5 class="card-title">${taskData.taskTitle}</h5>
                 <p class="card-text">${taskData.taskDescription}</p>
